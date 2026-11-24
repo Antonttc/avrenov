@@ -1,0 +1,323 @@
+/* ==========================================================================
+   AVRenov — Custom Stylesheet (Bootstrap 5.3 Companion)
+   Accent color: #092E74
+   ========================================================================== */
+
+:root {
+  --brand-primary: #092E74;
+  --brand-primary-hover: #062154;
+  --brand-primary-soft: rgba(9, 46, 116, 0.08);
+  --brand-border: #dce3ee;
+  --surface-muted: #f6f8fb;
+  --text-ink: #172030;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--text-ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Offset for sticky navbar when jumping to anchors */
+section[id],
+header[id] {
+  scroll-margin-top: 84px;
+}
+
+/* Surfaces & Brand Utilities */
+.bg-surface {
+  background-color: var(--surface-muted);
+}
+
+.bg-brand-dark {
+  background-color: var(--brand-primary);
+}
+
+.text-brand {
+  color: var(--brand-primary) !important;
+}
+
+/* Brand Buttons (override Bootstrap accents cleanly) */
+.btn-brand {
+  --bs-btn-color: #ffffff;
+  --bs-btn-bg: var(--brand-primary);
+  --bs-btn-border-color: var(--brand-primary);
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: var(--brand-primary-hover);
+  --bs-btn-hover-border-color: var(--brand-primary-hover);
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: var(--brand-primary-hover);
+  --bs-btn-active-border-color: var(--brand-primary-hover);
+  --bs-btn-disabled-color: #ffffff;
+  --bs-btn-disabled-bg: var(--brand-primary);
+  --bs-btn-disabled-border-color: var(--brand-primary);
+}
+
+.btn-outline-brand {
+  --bs-btn-color: var(--brand-primary);
+  --bs-btn-border-color: var(--brand-primary);
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: var(--brand-primary);
+  --bs-btn-hover-border-color: var(--brand-primary);
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: var(--brand-primary-hover);
+  --bs-btn-active-border-color: var(--brand-primary-hover);
+  --bs-btn-disabled-color: var(--brand-primary);
+  --bs-btn-disabled-border-color: var(--brand-primary);
+}
+
+/* Navbar */
+.brand-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
+
+.navbar .nav-link {
+  color: var(--text-ink);
+  font-weight: 500;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: var(--brand-primary);
+}
+
+/* Architectural / Specification Accents (minimalist, no noisy scroll motion) */
+.spec-code {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+}
+
+.spec-num {
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.375rem;
+  background-color: var(--brand-primary-soft);
+}
+
+.spec-card {
+  border-color: var(--brand-border) !important;
+  background-color: #ffffff;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.spec-card:hover {
+  border-color: var(--brand-primary) !important;
+  box-shadow: 0 0.35rem 1rem rgba(9, 46, 116, 0.06);
+}
+
+/* Property Type Filter state */
+.service-item.is-hidden {
+  display: none;
+}
+
+/* Before / After Comparison Slider (#realisations) */
+.ba-compare {
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
+  overflow: hidden;
+}
+
+.ba-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ba-before-wrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.ba-before-wrap .ba-before {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+}
+
+/* Keep the before image locked to the container box regardless of wrapper width */
+.ba-compare .ba-before-wrap > .ba-before {
+  width: auto;
+  min-width: 100%;
+  height: 100%;
+}
+
+.ba-tag {
+  position: absolute;
+  bottom: 0.75rem;
+  z-index: 4;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  pointer-events: none;
+}
+
+.ba-tag-before {
+  left: 0.75rem;
+  background-color: rgba(23, 32, 48, 0.82);
+  color: #ffffff;
+}
+
+.ba-tag-after {
+  right: 0.75rem;
+  background-color: rgba(9, 46, 116, 0.9);
+  color: #ffffff;
+}
+
+.ba-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 1px rgba(9, 46, 116, 0.35);
+  transform: translateX(-50%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.ba-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--brand-primary);
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.22);
+}
+
+.ba-range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 5;
+}
+
+.ba-range:focus-visible + .ba-tag,
+.ba-range:focus-visible ~ .ba-divider .ba-handle {
+  outline: 3px solid #ffffff;
+  box-shadow: 0 0 0 5px var(--brand-primary);
+}
+
+/* Forms & Mobile Zoom Prevention (16px minimum) */
+.form-lg-input {
+  font-size: 1rem;
+  border-color: var(--brand-border);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 0.2rem rgba(9, 46, 116, 0.16);
+}
+
+@media (max-width: 991.98px) {
+  .brand-logo {
+    height: 30px;
+  }
+
+  .display-5 {
+    font-size: calc(1.55rem + 1.2vw);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .spec-card,
+  .ba-before-wrap,
+  .ba-divider {
+    transition: none !important;
+  }
+}
+
+/* Full-bleed Hero background with soft readability veil */
+.hero-banner {
+  position: relative;
+  min-height: 440px;
+  display: flex;
+  align-items: center;
+  background-color: var(--surface-muted);
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.94) 0%,
+      rgba(246, 248, 251, 0.86) 52%,
+      rgba(246, 248, 251, 0.45) 100%
+    ),
+    url('../img/hero/hero-main.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-banner > .container {
+  z-index: 2;
+}
+
+@media (max-width: 991.98px) {
+  .hero-banner {
+    min-height: 380px;
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.92) 0%,
+        rgba(246, 248, 251, 0.88) 100%
+      ),
+      url('../img/hero/hero-main.jpg');
+  }
+}
+
+
+.ba-compare.ratio > .ba-tag {
+  top: auto;
+  bottom: 0.75rem;
+  width: auto;
+  height: auto;
+}
+
+.ba-compare .ba-tag-before {
+  left: 0.75rem;
+  right: auto;
+}
+
+.ba-compare .ba-tag-after {
+  left: auto;
+  right: 0.75rem;
+}
