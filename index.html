@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AVRenov — Rénovation intérieure et extérieure à Cannes</title>
+  <meta name="description" content="AVRenov : rénovation intérieure et extérieure pour les espaces résidentiels et professionnels à Cannes. Devis gratuit sous 24h.">
+
+  <!-- Bootstrap 5.3 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Bootstrap Icons CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Кастомные стили -->
+  <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body class="bg-white text-dark">
+
+  <!-- 1. NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top py-3" aria-label="Navigation principale">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold fs-4 text-brand" href="#accueil">
+        <img src="assets/img/logo.png" alt="AVRenov" class="brand-logo" onerror="this.style.display='none'">
+        <span></span>
+      </a>
+
+      <!-- Мобильные быстрые действия + бургер -->
+      <div class="d-flex align-items-center gap-2 d-lg-none">
+        <a href="tel:+33758069112" class="btn btn-outline-brand btn-sm" aria-label="Appeler AVRenov">
+          <i class="bi bi-telephone-fill"></i>
+        </a>
+        <a href="https://wa.me/33758069112" target="_blank" rel="noopener noreferrer" class="btn btn-brand btn-sm" aria-label="Contacter sur WhatsApp">
+          <i class="bi bi-whatsapp"></i>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAvrenov" aria-controls="navbarAvrenov" aria-expanded="false" aria-label="Ouvrir le menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarAvrenov">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="#accueil">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#realisations">Réalisations</a></li>
+          <li class="nav-item"><a class="nav-link" href="#a-propos">À propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item mt-2 mt-lg-0">
+            <a class="btn btn-brand px-4" href="#contact">Demander un devis</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 2. HERO -->
+  <header id="accueil" class="hero-banner py-5 border-bottom">
+    <div class="container py-4 py-lg-5 position-relative">
+      <div class="row">
+        <div class="col-lg-8 col-xl-7">
+          <div class="d-inline-flex align-items-center gap-2 small fw-semibold text-brand mb-3">
+            <i class="bi bi-rulers"></i>
+            <span>Cannes &amp; environs</span>
+          </div>
+          <h1 class="display-5 fw-bold text-brand mb-3">L’EXCELLENCE DANS CHAQUE DÉTAIL</h1>
+          <p class="lead text-dark mb-4">
+            Rénovation intérieure et extérieure pour les espaces résidentiels et professionnels
+          </p>
+          <div class="d-grid d-sm-flex gap-3">
+            <a href="#contact" class="btn btn-brand btn-lg px-4">Demander un devis</a>
+            <a href="https://wa.me/33758069112" target="_blank" rel="noopener noreferrer" class="btn btn-outline-brand btn-lg px-4 bg-white bg-opacity-75">
+              <i class="bi bi-whatsapp me-2"></i>WhatsApp
+            </a>
+            <a href="tel:+33758069112" class="btn btn-outline-secondary btn-lg px-4 bg-white bg-opacity-75">
+              <i class="bi bi-telephone me-2"></i>+33 7 58 06 91 12
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 3. SERVICES -->
+    <section id="services" class="py-5">
+      <div class="container py-lg-2">
+        <div class="row align-items-end justify-content-between g-3 mb-4">
+          <div class="col-lg-7">
+            <span class="spec-code text-brand fw-semibold">01 — 10 // PRESTATIONS</span>
+            <h2 class="fw-bold text-brand mt-1 mb-2">Services</h2>
+            <p class="text-secondary mb-0">
+              Rénovation intérieure et extérieure, préparation des surfaces et finitions soignées.
+            </p>
+          </div>
+
+          <!-- Переключатель типа объекта -->
+          <div class="col-lg-5 text-lg-end">
+            <div class="btn-group flex-wrap" role="group" aria-label="Filtrer les services par type d'espace" id="propertyTypeFilter">
+              <button type="button" class="btn btn-sm btn-brand active" data-filter="all">Tous</button>
+              <button type="button" class="btn btn-sm btn-outline-brand" data-filter="appartement">Appartement</button>
+              <button type="button" class="btn btn-sm btn-outline-brand" data-filter="maison">Maison</button>
+              <button type="button" class="btn btn-sm btn-outline-brand" data-filter="commercial">Local commercial</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4" id="servicesGrid">
+          <!-- 01 -->
+          <div class="col-md-6 col-lg-4 service-item" data-types="appartement maison commercial">
+            <article class="card h-100 border spec-card">
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="spec-num text-brand fw-bold">01</span>
+                  <i class="bi bi-houses fs-4 text-brand"></i>
+                </div>
+                <h3 class="h6 fw-bold mb-2">Rénovation complète d’appartements, de maisons et de locaux commerciaux</h3>
+                <p class="small text-secondary mb-0">Prise en charge globale du chantier, coordination des corps d’état et finitions durables.</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- 02 -->
+          <div class="col-md-6 col-lg-4 service-item" data-types="appartement maison commercial">
+            <article class="card h-100 border spec-card">
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="spec-num text-brand fw-bold">02</span>
+                  <i class="bi bi-hammer fs-4 text-brand"></i>
+                </div>
+                <h3 class="h6 fw-bold mb-2">Travaux de démolition et de dépose</h3>
+                <p class="small text-secondary mb-0">Dépose propre d’anciens revêtements, cloisons non porteuses et évacuation maîtrisée.</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- 03 -->
+          <div class="col-md-6 col-lg-4 service-item" data-types="appartement maison commercial">
+            <article class="card h-100 border spec-card">
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="spec-num text-brand fw-bold">03</span>
+                  <i class="bi bi-border-all fs-4 text-brand"></i>
+                </div>
+                <h3 class="h6 fw-bold mb-2">Création de cloisons en plaques de plâtre (Placo)</h3>
+                <p class="small text-secondary mb-0">Réorganisation des volumes, doublages et cloisons sèches avec alignement précis.</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- 04 -->
+          <div class="col-md-6 col-lg-4 service-item" data-types="appartement maison commercial">
+            <article class="card h-100 border spec-card">
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="spec-num text-brand fw-bold">04</span>
+                  <i class="bi bi-bounding-box fs-4 text-brand"></i>
+                </div>
+                <h3 class="h6 fw-bold mb-2">Installation de plafonds suspendus et de faux plafonds</h3>
+                <p class="small text-secondary mb-0">Pose de faux plafonds soignés pour l’esthétique, l’intégration lumineuse et les finitions.</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- 05 -->
+          <div class="col-md-6 col-lg-4 service-item" data-types="appartement maison commercial">
+            <article class="card h-100 border spec-card">
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="spec-num text-brand fw-bold">05</span>
+                  <i class="bi bi-paint-bucket fs-4 text-brand"></i>
+                </div>
+                <h3 class="h6 fw-bold mb-2">Travaux de peinture intérieure et finition des boiseries</h3>
+                <p class="small text-secondary mb-0">Application régulière des peintures intérieures et mise en valeur des éléments en bois.</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- 06 -->
+          <div class="col-md-6 col-lg-4 service-item" data-types="appartement maison commercial">
+            <article class="card h-100 border spec-card">
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="spec-num text-brand fw-bold">06</span>
+                  <i class="bi bi-aspect-ratio fs-4 text-brand"></i>
+                </div>
+                <h3 class="h6 fw-bold mb-2">Préparation des surfaces: enduits, ratissage et ponçage</h3>
+                <p class="small text-secondary mb-0">Correction des supports, ratissage complet et ponçage fin pour des murs lisses.</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- 07 -->
+          <div class="col-md-6 col-lg-4 service-item" data-types="appartement maison commercial">
+            <article class="card h-100 border spec-card">
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="spec-num text-brand fw-bold">07</span>
+                  <i class="bi bi-grid-3x3-gap fs-4 text-brand"></i>
+                </div>
+                <h3 class="h6 fw-bold mb-2">Pose de carrelage et de grès cérame</h3>
+                <p class="small text-secondary mb-0">Pose précise sur sols et murs avec joints réguliers et finitions durables.</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- 08 -->
+          <div class="col-md-6 col-lg-4 service-item" data-types="appartement maison">
+            <article class="card h-100 border spec-card">
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="spec-num text-brand fw-bold">08</span>
+                  <i class="bi bi-layers fs-4 text-brand"></i>
+                </div>
+                <h3 class="h6 fw-bold mb-2">Pose de parquet, stratifié et revêtements de sol PVC/vinyle</h3>
+                <p class="small text-secondary mb-0">Installation de revêtements de sol adaptés à chaque pièce et à l’usage quotidien.</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- 09 -->
+          <div class="col-md-6 col-lg-4 service-item" data-types="appartement maison commercial">
+            <article class="card h-100 border spec-card">
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="spec-num text-brand fw-bold">09</span>
+                  <i class="bi bi-door-closed fs-4 text-brand"></i>
+                </div>
+                <h3 class="h6 fw-bold mb-2">Pose de portes intérieures, plinthes et moulures décoratives</h3>
+                <p class="small text-secondary mb-0">Ajustement des menuiseries intérieures, plinthes et profilés décoratifs avec netteté.</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- 10 -->
+          <div class="col-md-6 col-lg-4 service-item" data-types="appartement maison commercial">
+            <article class="card h-100 border spec-card">
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <span class="spec-num text-brand fw-bold">10</span>
+                  <i class="bi bi-check2-square fs-4 text-brand"></i>
+                </div>
+                <h3 class="h6 fw-bold mb-2">Aménagement intérieur et finitions clés en main</h3>
+                <p class="small text-secondary mb-0">Optimisation de l’espace et finitions complètes prêtes à être utilisées.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. REALISATIONS -->
+    <section id="realisations" class="py-5 bg-surface border-top border-bottom">
+      <div class="container py-lg-2">
+        <div class="mb-4">
+          <span class="spec-code text-brand fw-semibold">AVANT // APRÈS</span>
+          <h2 class="fw-bold text-brand mt-1 mb-2">Nos réalisations</h2>
+          <p class="text-secondary mb-0">
+            Aperçu de nos chantiers de rénovation et finitions. Faites glisser le curseur pour comparer l’avant et l’après.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Карточка 1 -->
+          <div class="col-lg-6">
+            <article class="card border h-100 bg-white">
+              <div class="ba-compare ratio ratio-16x9 bg-light" data-ba-compare>
+                <img src="assets/img/realisations/projet-1-apres.jpg" alt="Après rénovation — espace intérieur fini" class="ba-img ba-after">
+                <div class="ba-before-wrap" style="width: 50%;">
+                  <img src="assets/img/realisations/projet-1-avant.jpg" alt="Avant rénovation — préparation des surfaces" class="ba-img ba-before">
+                </div>
+                <span class="ba-tag ba-tag-before">Avant</span>
+                <span class="ba-tag ba-tag-after">Après</span>
+                <div class="ba-divider" aria-hidden="true">
+                  <span class="ba-handle"><i class="bi bi-arrows-expand-vertical"></i></span>
+                </div>
+                <input type="range" class="ba-range" min="0" max="100" value="50" aria-label="Comparer avant et après pour le projet 1">
+              </div>
+              <div class="card-body p-4">
+                <h3 class="h5 fw-bold text-brand mb-2">Rénovation intérieure &amp; finitions</h3>
+                <p class="small text-secondary mb-0">
+                  Préparation des surfaces, enduits, peinture intérieure et pose de revêtements durables.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Карточка 2 -->
+          <div class="col-lg-6">
+            <article class="card border h-100 bg-white">
+              <div class="ba-compare ratio ratio-16x9 bg-light" data-ba-compare>
+                <img src="assets/img/realisations/projet-2-apres.jpg" alt="Après travaux — revêtements et menuiseries" class="ba-img ba-after">
+                <div class="ba-before-wrap" style="width: 50%;">
+                  <img src="assets/img/realisations/projet-2-avant.jpg" alt="Avant travaux — état initial du chantier" class="ba-img ba-before">
+                </div>
+                <span class="ba-tag ba-tag-before">Avant</span>
+                <span class="ba-tag ba-tag-after">Après</span>
+                <div class="ba-divider" aria-hidden="true">
+                  <span class="ba-handle"><i class="bi bi-arrows-expand-vertical"></i></span>
+                </div>
+                <input type="range" class="ba-range" min="0" max="100" value="50" aria-label="Comparer avant et après pour le projet 2">
+              </div>
+              <div class="card-body p-4">
+                <h3 class="h5 fw-bold text-brand mb-2">Aménagement &amp; pose de revêtements</h3>
+                <p class="small text-secondary mb-0">
+                  Cloisons Placo, pose de carrelage ou parquet et finitions soignées adaptées aux besoins du client.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. A PROPOS -->
+    <section id="a-propos" class="py-5">
+      <div class="container py-lg-2">
+        <div class="row g-4 g-lg-5 align-items-start">
+          <div class="col-lg-6">
+            <span class="spec-code text-brand fw-semibold">01 — 03 // VALEURS</span>
+            <h2 class="fw-bold text-brand mt-1 mb-3">À propos</h2>
+            <p class="text-secondary">
+              Chez <strong>AVRENOV</strong>, nous croyons qu’une rénovation réussie repose sur trois valeurs essentielles : la qualité, la précision et la confiance.
+            </p>
+            <p class="text-secondary">
+              Spécialisés dans la rénovation intérieure et extérieure, nous accompagnons nos clients dans tous leurs projets, des simples travaux de finition aux rénovations complètes de maisons, d’appartements et de locaux professionnels.
+            </p>
+            <p class="text-secondary mb-0">
+              Chaque chantier est réalisé avec le plus grand soin, en utilisant des matériaux de qualité et des techniques modernes afin de garantir un résultat durable, esthétique et parfaitement exécuté. Notre objectif n’est pas seulement de rénover un espace, mais de créer un environnement confortable, élégant et conçu pour durer. Le respect des délais, la transparence, l’écoute du client et l’attention portée aux moindres détails sont les fondements de notre manière de travailler.
+            </p>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="row g-3">
+              <div class="col-12">
+                <div class="p-4 border rounded-3 spec-card">
+                  <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="spec-num fw-bold text-brand">01</span>
+                    <i class="bi bi-shield-check fs-4 text-brand"></i>
+                  </div>
+                  <h3 class="h5 fw-bold text-brand mb-1">Qualité</h3>
+                  <p class="small text-secondary mb-0">Matériaux de qualité, techniques modernes et finitions durables conçues pour durer.</p>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="p-4 border rounded-3 spec-card">
+                  <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="spec-num fw-bold text-brand">02</span>
+                    <i class="bi bi-crosshair fs-4 text-brand"></i>
+                  </div>
+                  <h3 class="h5 fw-bold text-brand mb-1">Précision</h3>
+                  <p class="small text-secondary mb-0">Attention portée aux moindres détails, préparation soignée des surfaces et exécution rigoureuse.</p>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="p-4 border rounded-3 spec-card">
+                  <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="spec-num fw-bold text-brand">03</span>
+                    <i class="bi bi-hand-thumbs-up fs-4 text-brand"></i>
+                  </div>
+                  <h3 class="h5 fw-bold text-brand mb-1">Confiance</h3>
+                  <p class="small text-secondary mb-0">Transparence, écoute du client et respect des délais tout au long du projet.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CONTACT & FORMULAIRE -->
+    <section id="contact" class="py-5 bg-surface border-top">
+      <div class="container py-lg-2">
+        <div class="row g-5">
+          <div class="col-lg-5">
+            <span class="spec-code text-brand fw-semibold">CONTACT // DEVIS</span>
+            <h2 class="fw-bold text-brand mt-1 mb-3">Demandez votre devis gratuit</h2>
+
+            <div class="d-grid gap-3 mt-4">
+              <div class="p-3 bg-white border rounded-3 d-flex align-items-start gap-3">
+                <i class="bi bi-telephone fs-4 text-brand mt-1"></i>
+                <div>
+                  <div class="fw-semibold">Téléphone</div>
+                  <a href="tel:+33758069112" class="text-brand text-decoration-none fw-semibold">+33 7 58 06 91 12</a>
+                  <div class="small text-secondary">Du lundi au vendredi 8h00–17h00</div>
+                </div>
+              </div>
+
+              <div class="p-3 bg-white border rounded-3 d-flex align-items-start gap-3">
+                <i class="bi bi-envelope fs-4 text-brand mt-1"></i>
+                <div>
+                  <div class="fw-semibold">E-mail</div>
+                  <a href="mailto:contact@avrenov.fr" class="text-brand text-decoration-none fw-semibold">contact@avrenov.fr</a>
+                  <div class="small text-secondary">Nous répondons sous 24h</div>
+                </div>
+              </div>
+
+              <div class="p-3 bg-white border rounded-3 d-flex align-items-start gap-3">
+                <i class="bi bi-geo-alt fs-4 text-brand mt-1"></i>
+                <div>
+                  <div class="fw-semibold">Adresse</div>
+                  <a href="https://maps.app.goo.gl/uUCTCC4peerpuv537?g_st=ic" target="_blank" rel="noopener noreferrer" class="text-brand text-decoration-none fw-semibold">5 Boulevard Cointet</a>
+                  <div class="small text-secondary">06400 Cannes, France</div>
+                </div>
+              </div>
+
+              <div class="p-3 bg-white border rounded-3 d-flex align-items-start gap-3">
+                <i class="bi bi-whatsapp fs-4 text-brand mt-1"></i>
+                <div>
+                  <div class="fw-semibold">WhatsApp</div>
+                  <a href="https://wa.me/33758069112" target="_blank" rel="noopener noreferrer" class="text-brand text-decoration-none fw-semibold">Chat en direct</a>
+                  <div class="small text-secondary">Réponse rapide</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <form id="devisForm" action="assets/api/send.php" method="POST" class="p-4 p-md-5 bg-white border rounded-3" novalidate>
+              <div class="row g-3">
+                <div class="col-sm-4">
+                  <label for="civilite" class="form-label fw-semibold">Civilité</label>
+                  <select id="civilite" name="civilite" class="form-select form-lg-input">
+                    <option value="Monsieur">Monsieur</option>
+                    <option value="Madame">Madame</option>
+                  </select>
+                </div>
+
+                <div class="col-sm-4">
+                  <label for="prenom" class="form-label fw-semibold">Prénom *</label>
+                  <input type="text" id="prenom" name="prenom" class="form-control form-lg-input" required>
+                  <div class="invalid-feedback">Veuillez indiquer votre prénom.</div>
+                </div>
+
+                <div class="col-sm-4">
+                  <label for="nom" class="form-label fw-semibold">Nom *</label>
+                  <input type="text" id="nom" name="nom" class="form-control form-lg-input" required>
+                  <div class="invalid-feedback">Veuillez indiquer votre nom.</div>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="email" class="form-label fw-semibold">Adresse e-mail *</label>
+                  <input type="email" id="email" name="email" class="form-control form-lg-input" required>
+                  <div class="invalid-feedback">Veuillez indiquer une adresse e-mail valide.</div>
+                </div>
+
+                <div class="col-sm-6">
+                  <label for="telephone" class="form-label fw-semibold">Téléphone *</label>
+                  <input type="tel" id="telephone" name="telephone" class="form-control form-lg-input" required>
+                  <div class="invalid-feedback">Veuillez indiquer votre numéro de téléphone.</div>
+                </div>
+
+                <div class="col-12">
+                  <label for="sujet" class="form-label fw-semibold">Sujet</label>
+                  <input type="text" id="sujet" name="sujet" class="form-control form-lg-input">
+                </div>
+
+                <div class="col-12">
+                  <label for="message" class="form-label fw-semibold">Votre message *</label>
+                  <textarea id="message" name="message" rows="5" class="form-control form-lg-input" required></textarea>
+                  <div class="invalid-feedback">Veuillez décrire votre demande.</div>
+                </div>
+
+                <div class="col-12">
+                  <button type="submit" id="submitBtn" class="btn btn-brand btn-lg w-100">Envoyer ma demande</button>
+                </div>
+
+                <div class="col-12">
+                  <div id="formFeedback" class="alert d-none mb-0" role="status" aria-live="polite"></div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 7. FOOTER -->
+  <footer class="py-5 bg-brand-dark text-white">
+    <div class="container">
+      <div class="row g-4 pb-4 border-bottom border-light border-opacity-10">
+        <div class="col-lg-5">
+          <div class="fw-bold fs-5 mb-2">AVRENOV</div>
+          <p class="small text-white-50 mb-0">
+            Nous rénovons vos espaces avec précision et savoir-faire. Des finitions durables et un résultat à la hauteur de vos attentes.
+          </p>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <div class="fw-semibold small text-uppercase mb-2">Navigation</div>
+          <ul class="list-unstyled small d-grid gap-1 mb-0">
+            <li><a href="#accueil" class="link-light link-opacity-75 link-opacity-100-hover text-decoration-none">Accueil</a></li>
+            <li><a href="#services" class="link-light link-opacity-75 link-opacity-100-hover text-decoration-none">Services</a></li>
+            <li><a href="#realisations" class="link-light link-opacity-75 link-opacity-100-hover text-decoration-none">Réalisations</a></li>
+            <li><a href="#a-propos" class="link-light link-opacity-75 link-opacity-100-hover text-decoration-none">À propos</a></li>
+            <li><a href="#contact" class="link-light link-opacity-75 link-opacity-100-hover text-decoration-none">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-4">
+          <div class="fw-semibold small text-uppercase mb-2">Informations légales</div>
+          <ul class="list-unstyled small d-grid gap-1 mb-0">
+            <li><a href="mentions-legales.html" class="link-light link-opacity-75 link-opacity-100-hover text-decoration-none">Mentions légales</a></li>
+            <li><a href="politique-de-confidentialite.html" class="link-light link-opacity-75 link-opacity-100-hover text-decoration-none">Politique de confidentialité</a></li>
+            <li><a href="politique-de-cookies.html" class="link-light link-opacity-75 link-opacity-100-hover text-decoration-none">Politique de cookies</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-4 small text-white-50 text-center text-md-start">
+        © 2026 AVRENOV. Tous droits réservés.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 JS Bundle CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- Кастомный скрипт -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
